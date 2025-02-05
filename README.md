@@ -43,7 +43,7 @@ This project is a **Fraud Detection System** for e-commerce transactions, built 
 
 ```bash
 git clone https://github.com/shawnsaldanha79/e-commerce-fraud-detection-system.git
-cd ecommerce-fraud-detection-system
+cd e-commerce-fraud-detection-system
 ```
 
 ### 2. Install Dependencies
