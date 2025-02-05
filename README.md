@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a **Fraud Detection System** for e-commerce transactions, built using **Flask, Scikit-learn, Random Forest, and Optuna**. It provides a web interface where users can input transaction details and predict whether a transaction is fraudulent.
+This project is a **Fraud Detection System** for e-commerce transactions, built using **Flask, Scikit-learn, XGBoost, and Optuna**. It provides a web interface where users can input transaction details and predict whether a transaction is fraudulent.
 
 ## Features
 
@@ -16,12 +16,27 @@ This project is a **Fraud Detection System** for e-commerce transactions, built 
 ## Tech Stack
 
 - **Backend:** Flask
-- **Machine Learning:** Scikit-learn, Random Forest, Optuna
+- **Machine Learning:** Scikit-learn, XGBoost, Optuna
 - **Database:** CSV for storing transaction predictions
 - **AI Integration:** Groq API for fraud explanations
 
 ---
 
+## Project Structure
+
+```
+├── templates/
+│   ├── home.html                      # Homepage
+│   ├── form.html                      # Transaction input form
+│   ├── result.html                     # Fraud prediction result page
+|── train_model/
+|   |── fraud_prediction.ipynb         # Training code
+├── app.py                              # Flask web app
+├── requirements.txt                     # Python dependencies
+└── README.md                            # Project documentation
+```
+
+---
 ## Installation & Setup
 
 ### 1. Clone the Repository
@@ -45,6 +60,8 @@ Run the model training script to generate a trained fraud detection model:
 python train_model.py
 ```
 
+Save the model in `/models` directory.
+
 ### 4. Run the Flask App
 
 ```bash
@@ -64,21 +81,8 @@ The application will be available at **`http://localhost:5000/`**.
 
 ---
 
-## Project Structure
-
-```
-├── models/
-│   ├── fraud_detection_model.joblib   # Trained ML model
-├── templates/
-│   ├── home.html                      # Homepage
-│   ├── form.html                      # Transaction input form
-│   ├── result.html                     # Fraud prediction result page
-|── train_model/
-|   |── fraud_prediction.ipynb         # Training code
-├── app.py                              # Flask web app
-├── requirements.txt                     # Python dependencies
-└── README.md                            # Project documentation
-```
+## Datasets
+- **Fraudulent E-Commerce Transaction Data**: This dataset contains information about e-commerce transactions, including both fraudulent and non-fraudulent labels. It features attributes such as Transaction ID, Customer ID, Transaction Amount, Transaction Date, Payment Method, Product Category, Quantity, Customer Age, Customer Location, Device Used, IP Address, Shipping Address, Billing Address, Is Fraudulent, Account Age Days, and Transaction Hour.
 
 ---
 
@@ -90,6 +94,13 @@ The application will be available at **`http://localhost:5000/`**.
 - **Hyperparameter Optimization:** Used Optuna to tune the best-performing model.
 - **Performance Metrics:** Accuracy, Confusion Matrix, Classification Report.
 
+---
+
+## Results
+- **Model Accuracy:** Among the models evaluated, Random Forest emerged as the most accurate, achieving a performance of 96.51% accuracy. XGBoost followed closely with an accuracy of 95.22%, and Decision Tree achieved an accuracy of 94.38%.
+- **Optimized Performance:** Using Optuna for hyperparameter tuning, the Random Forest model was further optimized, improving its accuracy to 97.08%, making it the most reliable model for fraud detection.  
+- **Effective Fraud Detection:** The model successfully identifies fraudulent transactions, leveraging various features such as transaction amount, product category, payment method, and customer behavior to flag anomalies.
+ 
 ---
 
 ## Dependencies
@@ -118,3 +129,11 @@ pip install -r requirements.txt
 - Expand fraud detection using deep learning.
 - Deploy on a cloud platform (AWS/GCP/Heroku).
 
+---
+
+# Contributors
+
+- Ganesh SP
+- Aniruddha Nagesh Salvankar
+- Shawn Glanal Saldanha
+- Varun MC
