@@ -54,7 +54,7 @@ pip install -r requirements.txt
 
 ### 3. Train the Fraud Detection Model
 
-Run the model training script to generate a trained fraud detection model:
+Run the model training script to generate a trained fraud detection model (Or you can download the model from [`here`](https://drive.google.com/uc?id=1yODGuyQFRy4E7hrgXMPKeVpNsV5nXTpQ)):
 
 ```bash
 python train_model.py
